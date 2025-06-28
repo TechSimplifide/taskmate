@@ -11,9 +11,10 @@ let btn = document.querySelector("button").addEventListener("click", () => {
     error.innerHTML = `Error: please enter some task!!`;
     document.querySelector("#cancle").style.display = "block";
   } else {
-    
     //creating li to show tasks
     let li = document.createElement("li");
+    let hr = document.createElement("hr");
+    hr.setAttribute("class", "hr-seprater");
     li.setAttribute("class", "vertual-task-li");
     let ul = document.querySelector("#Add");
     ul.appendChild(li);
@@ -41,7 +42,7 @@ let btn = document.querySelector("button").addEventListener("click", () => {
         li.appendChild(editBtn);
         li.appendChild(deletebtn);
         li.append(time);
-        
+
         editBtn.innerText = "Save";
       } else {
         let UpdatedTask = li.querySelector("input").value;
@@ -53,30 +54,28 @@ let btn = document.querySelector("button").addEventListener("click", () => {
       }
     });
 
-    
     // create a delete button
     let deletebtn = document.createElement("button");
     deletebtn.setAttribute("class", "delete-button");
     deletebtn.innerText = "Delete";
     li.appendChild(deletebtn);
 
-
     // working of delete button
     deletebtn.addEventListener("click", () => {
       li.innerText = "";
       editBtn.remove();
       deletebtn.remove();
+      hr.remove();
     });
 
-        // time
+    // time
     let curr = new Date();
     let time = document.createElement("div");
     time.setAttribute("class", "date");
     time.innerHTML = `${curr.getHours()}:${curr.getMinutes()}`;
 
     li.append(time);
-
-
+    ul.appendChild(hr);
   }
 });
 
