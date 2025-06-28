@@ -3,20 +3,9 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  /* background-color: rgba(194, 224, 235, 0.674); */
 }
 body {
-  display: flex;
-  justify-content: center;
-  background: linear-gradient(
-    79deg,
-    rgb(84, 84, 242),
-    rgb(242, 90, 115),
-    rgb(117, 117, 243),
-    rgb(239, 104, 239)
-  );
-}
-.main {
+  background: linear-gradient(89deg, rgb(229, 164, 175), rgb(125, 125, 221));
 }
 .heading {
   text-align: center;
@@ -25,88 +14,130 @@ h2 {
   color: rgb(145, 91, 195);
   text-shadow: 1.5px 1.5px rgb(218, 206, 206);
 }
-#textfield {
-  height: 2.4rem;
-  min-width: 60vw;
-  outline: none;
-  border: none;
-  border-radius: 3px;
-  background-color: rgba(40, 199, 199, 0.247);
-  font-size: larger;
-  font-weight: 600;
-  font-style: italic;
-  color: white;
+.container-center {
+  display: flex;
+  justify-content: center;
 }
 
 .inputfield-button {
-  background-color: rgba(34, 197, 197, 0.836);
-  height: min-content;
-  width: max-content;
+  /* background-color: rgba(34, 197, 197, 0.836); */
+  background: linear-gradient(89deg, rgb(229, 164, 175), rgb(125, 125, 221));
   padding: 0.5em;
   border-radius: 0.4rem;
   margin-top: 3%;
   border: 0.1rem solid white;
 }
-@media (max-width: 650px) {
-  #textfield {
-    height: 2.5rem;
-    width: 73vw;
-  }
-  
+#textfield {
+  height: 2.6rem;
+  min-width: 60vw;
+  outline: none;
+  border: none;
+  /* background-color: rgba(40, 199, 199, 0.247); */
+  /* background: linear-gradient(89deg, rgb(229, 164, 175), rgb(125, 125, 221)); */
+  background: transparent;
+  font-size: larger;
+  color: white;
 }
+.error-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.error-waper {
+  display: flex;
+  margin-top: 0.2rem;
+  background-color: rgb(227, 186, 131);
+  border-radius: 0.3rem;
+  color: brown;
+  align-items: center;
+}
+#cancle {
+  height: 1.4rem;
+  margin-left: 0.2rem;
+  cursor: pointer;
+  display: none;
+}
+
 .add-task {
-        border: none;
-        background-color: rgb(243, 242, 245);
-        padding: 0.7rem 0.9rem 0.7rem 0.9rem;
-        border: 0.1rem solid rgba(235, 245, 245, 0.493);
-        border-radius: 0.4rem;
-        box-shadow: 2.2px 2.2px 1px rgba(236, 174, 174, 0.815);
+  border: none;
+  background-color: rgba(243, 242, 245, 0.87);
+  padding: 0.4rem 0.6rem 0.4rem 0.6rem;
+  border: 0.1rem solid rgba(235, 245, 245, 0.493);
+  border-radius: 0.4rem;
+  font-weight: 500;
+  box-shadow: 2.2px 2.2px 1px rgba(236, 174, 174, 0.815);
+}
+#wap {
+  margin-top: 0.3rem;
+  background-color: #fff;
+  border-radius: 0.2rem;
+  border: 0.1rem solid rgba(180, 39, 180, 0.81);
+  width: 80vw;
+  height: 100%;
+  padding-bottom: 0.2rem;
+
+  word-break: break-word;
+  white-space: normal;
+  overflow: anywhere;
+}
+#Add {
+  display: flex;
+  justify-content: left;
+  flex-direction: column;
+  margin-left: 0.1rem;
+}
+.center-container {
+  display: flex;
+  justify-content: center;
+}
+
+li {
+  margin-top: 0.2rem;
+  width: fit-content;
 }
 ul {
   list-style: none;
 }
-#wap{
-  display: flex;
-  justify-content: center;
-  /* align-items: center; */
-  margin-top: 4%;
-  background-color: rgb(236, 226, 211);
-  height: 100%;
-  width: 100%;
-  border-radius: 0.7rem;
-
-}
-#Add{
- display: flex;
- flex-direction: column;
- align-items: center;
-}
-li {
-  margin-top: 0.4rem;
-}
 #vertualText {
   outline: none;
-        height: 1.5rem;
-        width: 160px;
-        /* margin-right: 2.4rem; */
-        /* margin-right: 5vw; */
-        /* border: 2px solid palevioletred; */
-        /* outline: none;
-        height: 1.8rem;
-         */
+  width: 30rem;
+}
+.vertual-task-li {
+  margin-left: 0.1rem;
+}
+.delete-button {
+  border: 0.1rem solid;
+  background-color: rgb(230, 66, 66);
+  margin-left: 0.3rem;
+  padding: 0.1rem;
+  border: 1px solid rgb(120, 102, 102);
+  border-radius: 0.2rem;
+  font-weight: 500;
+}
 
+.edit-button {
+  margin-left: 1.4rem;
+  font-weight: 500;
 }
-.delete-button{
-  border: none;
-  margin-left: 1.5rem;
-  
-}
-.edit-button{
-  border: none;
-  margin-left: 1.5rem;
-  
-}
-.date{
+.date {
   display: inline;
-  margin-left: 9rem;
+  margin-left: 0.3rem;
+  color: rgba(221, 112, 130, 0.907);
+  font-weight: 900;
+}
+@media (max-width: 670px) {
+  #textfield {
+    height: 2.3rem;
+    width: 70vw;
+  }
+
+  #wap {
+    width: 94vw;
+    height: 100%;
+  }
+
+  #vertualText {
+    width: 11rem;
+  }
+
 }

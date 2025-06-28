@@ -2,56 +2,35 @@
 let btn = document.querySelector("button").addEventListener("click", () => {
   let text = document.querySelector("#textfield").value;
 
+  // to show an error message
   if (document.querySelector("#textfield").value === "") {
-    alert("Error: please enter some task!!");
+    document.querySelector(
+      ".error-waper"
+    ).style = `padding: 0.2rem; border: 0.1em solid white; `;
+    let error = document.querySelector(".error");
+    error.innerHTML = `Error: please enter some task!!`;
+    document.querySelector("#cancle").style.display = "block";
   } else {
+    
     //creating li to show tasks
-
     let li = document.createElement("li");
     li.setAttribute("class", "vertual-task-li");
     let ul = document.querySelector("#Add");
     ul.appendChild(li);
-    li.innerText = text; 
-    // li.style.position = "relative";
-    // li.style.top = "14px";
+    li.innerText = text;
+
     document.querySelector("#textfield").value = "";
 
-    // create a delete button
-
-    let deletebtn = document.createElement("button");
-    deletebtn.setAttribute("class", "delete-button");
-    deletebtn.innerText = "Delete";
-
-    deletebtn.style.backgroundColor = "red";
-
-    // deletebtn.style.position = "relative";
-    // deletebtn.style.left = "240px";
-    // time
-    let curr = new Date();
-    let date = document.createElement("div");
-     date.setAttribute('class','date')
-    date.innerHTML=`${curr.getHours()}:${curr.getMinutes()}:${curr.getSeconds()}`;
-
-    li.append(date);
-    li.appendChild(deletebtn);
-    // working of delete button
-    deletebtn.addEventListener("click", () => {
-      li.innerText = "";
-
-      editBtn.remove();
-      
-      deletebtn.remove();
-    });
     // create edit button
     let editBtn = document.createElement("button");
     editBtn.innerText = "Edit";
     editBtn.setAttribute("class", "edit-button");
     li.appendChild(editBtn);
+
     // working of edit button
     editBtn.addEventListener("click", () => {
       if (editBtn.innerText === "Edit") {
         let currentVal = li.firstChild.textContent;
-
         let inputVal = document.createElement("input");
         inputVal.type = "text";
         inputVal.value = currentVal;
@@ -59,23 +38,50 @@ let btn = document.querySelector("button").addEventListener("click", () => {
 
         li.innerText = "";
         li.appendChild(inputVal);
-        li.append(date);
         li.appendChild(editBtn);
         li.appendChild(deletebtn);
-
+        li.append(time);
+        
         editBtn.innerText = "Save";
-        // editBtn.style.position = "relative";
-        // editBtn.style.left = "230px";
       } else {
         let UpdatedTask = li.querySelector("input").value;
         li.innerText = UpdatedTask;
         li.appendChild(editBtn);
         editBtn.innerText = "Edit";
         li.appendChild(deletebtn);
-        li.append(date);
-        // editBtn.style.position = "relative";
-        // editBtn.style.left = "230px";
+        li.append(time);
       }
     });
+
+    
+    // create a delete button
+    let deletebtn = document.createElement("button");
+    deletebtn.setAttribute("class", "delete-button");
+    deletebtn.innerText = "Delete";
+    li.appendChild(deletebtn);
+
+
+    // working of delete button
+    deletebtn.addEventListener("click", () => {
+      li.innerText = "";
+      editBtn.remove();
+      deletebtn.remove();
+    });
+
+        // time
+    let curr = new Date();
+    let time = document.createElement("div");
+    time.setAttribute("class", "date");
+    time.innerHTML = `${curr.getHours()}:${curr.getMinutes()}`;
+
+    li.append(time);
+
+
   }
+});
+
+document.querySelector("#cancle").addEventListener("click", () => {
+  document.querySelector(".error-waper").removeAttribute("style");
+  document.querySelector(".error").innerHTML = "";
+  document.querySelector("#cancle").style.display = "none";
 });
