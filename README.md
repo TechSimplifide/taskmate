@@ -2,7 +2,7 @@
 
 TaskMate is a simple and effective to-do list web app that helps users manage daily tasks easily.
 
-🔗 **Live Demo:** <a href="https://techsimplifide.github.io/taskmate/">Deploy on GitHub Pages</a>
+🔗 **Live Demo:** <a href="https://techsimplifide.github.io/taskmate/" target="_blank>Deploy on GitHub Pages</a>
 
 ## 🛠️ Built With
 
